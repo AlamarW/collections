@@ -18,7 +18,7 @@ def collection_list(request):
         return JsonResponse({"error": "Authentication required"}, status=401)
     # get collections where user == request
     if request.method == "GET":
-        collections = Collection.objects.filter(owner=request.user)
+        collections = Collection.objects.filter(owner=request.user)  # pyright: ignore[reportAttributeAccessIssue]
         collections_data = [
             {
                 "id": collection.id,
@@ -42,7 +42,7 @@ def collection_detail(request, pk):
     # Create a collection for the user
     elif request.method == "POST":
         data = json.loads(request.body)
-        collection = Collection.objects.create(name=data["name"], owner=request.user)
+        collection = Collection.objects.create(name=data["name"], owner=request.user)  # pyright: ignore[reportAttributeAccessIssue]
         return JsonResponse({"id": collection.id, "name": collection.name}, status=201)
 
     # Read a collection for the user
