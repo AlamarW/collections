@@ -1,10 +1,32 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+# Allowlist approach: ignore everything by default, allow specific files
 
-# Virtual environments
-.venv
+# Ignore everything at root level
+/*
+
+# Allow root-level files
+!/.gitignore
+!/.python-version
+!/README.md
+!/main.py
+!/manage.py
+!/pyproject.toml
+!/uv.lock
+
+# Allow collections_app directory and all its contents
+!/collections_app/
+!/collections_app/**
+
+# Allow config directory and all its contents
+!/config/
+!/config/**
+
+# But explicitly ignore Python-generated files even in allowed directories
+**/__pycache__/
+**/*.py[oc]
+**/build/
+**/dist/
+**/wheels/
+**/*.egg-info
+
+# Ignore virtual environments
+**/.venv/
