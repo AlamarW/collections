@@ -5,13 +5,8 @@ from django.db import models
 class Collection(models.Model):
     name = models.CharField(max_length=255)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    collection_items = models.ManyToManyField(
-        "Item", related_name="collections", blank=True
-    )
     collection_schema = models.JSONField(default=dict, blank=True)
-
-    def __str__(self):
-        return self.name
+    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ["name"]
@@ -25,7 +20,7 @@ class Item(models.Model):
     )
 
     def __str__(self):
-        return f"{self.name} ({self.collection.name})"
+        return f"{self.name} ({self.item_collection.name})"
 
     class Meta:
         ordering = ["name"]
