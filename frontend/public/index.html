@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+        }
+        .homepage {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        header {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1.5rem 0;
+            margin-bottom: 4rem;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        h1 {
+            color: #222;
+            margin: 0 0 1rem 0;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .tagline {
+            color: #666;
+            margin: 0 0 2rem 0;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        .description {
+            color: #555;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+        .login-button {
+            background: #ffc4dc;
+            color: #333;
+            border: 1px solid #ffb3d1;
+            padding: 0.625rem 1.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .login-button:hover {
+            background: #ffb3d1;
+            border-color: #ffa3c6;
+        }
+        .login-button:active {
+            background: #ffa3c6;
+        }
+        .note {
+            margin: 1.5rem 0 0 0;
+            color: #999;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="/static/elm.js"></script>
+    <script>
+        var app = Elm.Main.init({
+            node: document.getElementById('app')
+        });
+    </script>
+</body>
+</html>

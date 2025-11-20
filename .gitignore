@@ -20,6 +20,17 @@
 !/config/
 !/config/**
 
+# Allow frontend directory and scripts
+!/frontend/
+!/frontend/**
+!/scripts/
+!/scripts/**
+
+# Ignore frontend build artifacts
+/dist/
+/frontend/node_modules/
+/frontend/elm-stuff/
+
 # But explicitly ignore Python-generated files even in allowed directories
 **/__pycache__/
 **/*.py[oc]
